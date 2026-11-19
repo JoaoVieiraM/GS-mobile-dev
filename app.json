@@ -1,13 +1,17 @@
 {
   "expo": {
-    "name": "gota-inteligente-mobile",
+    "name": "Gota Inteligente",
     "slug": "gota-inteligente-mobile",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "gotainteligente",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "A Gota Inteligente usa sua localização para marcar onde fica a zona de irrigação e buscar a previsão de chuva daquele ponto."
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -20,6 +24,22 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "A Gota Inteligente usa sua localização para marcar onde fica a zona de irrigação e buscar a previsão de chuva daquele ponto."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "apiUrl": "http://192.168.0.10:8080/api",
+      "fonteDados": "local"
     }
   }
 }
